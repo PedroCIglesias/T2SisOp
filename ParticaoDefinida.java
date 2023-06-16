@@ -1,7 +1,7 @@
-public class Definida implements Particao {
+public class ParticaoDefinida implements Particao {
     private int tamanho;
 
-    public Definida(int tamanho) {
+    public ParticaoDefinida(int tamanho) {
         this.tamanho = tamanho;
     }
 

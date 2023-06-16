@@ -1,8 +1,8 @@
-public class Variavel implements Particao {
+public class ParticaoVariavel implements Particao {
     private int tamanho;
     private PoliticaAlocacao politicaAlocacao;
 
-    public Variavel(int tamanho, PoliticaAlocacao politicaAlocacao) {
+    public ParticaoVariavel(int tamanho, PoliticaAlocacao politicaAlocacao) {
         this.tamanho = tamanho;
         this.politicaAlocacao = politicaAlocacao;
     }

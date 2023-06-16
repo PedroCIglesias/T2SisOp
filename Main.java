@@ -32,13 +32,11 @@ public class Main {
             }
 
             
-            Variavel particaoVariavel = new Variavel(tamanhoMemoria, politica);
 
         } else if (opcao == 2) {
             System.out.print("Informe o tamanho da memória: ");
             int tamanhoMemoria = scanner.nextInt();
 
-            Definida particaoDefinida = new Definida(tamanhoMemoria);
 
         } else {
             System.out.println("Opção inválida.");
