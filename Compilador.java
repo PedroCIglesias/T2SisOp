@@ -15,14 +15,15 @@ public class Compilador {
             while ((linha = reader.readLine()) != null) {
                 String[] partes = linha.split(" ");
                 String comando = partes[0];
+                Processo processo = new Processo();
 
                 if (comando.equals("IN")) {
-                    String idProcesso = partes[1].substring(1, partes[1].length() - 1);
-                    int tamanho = Integer.parseInt(partes[2]);
-                    codigoExecutavel.add(new Executavel(Executavel.Tipo.IN,idProcesso,tamanho));
+                    processo.id = partes[1].substring(1, partes[1].length() - 1);
+                    processo.tamanho = Integer.parseInt(partes[2]);
+                    codigoExecutavel.add(new Executavel(Executavel.Tipo.IN,processo));
                 } else if (comando.equals("OUT")) {
-                    String idProcesso = partes[1].substring(1, partes[1].length() - 1);
-                    codigoExecutavel.add(new Executavel(Executavel.Tipo.OUT,idProcesso));
+                    processo.id = partes[1].substring(1, partes[1].length() - 1);
+                    codigoExecutavel.add(new Executavel(Executavel.Tipo.OUT,processo));
                 }
             }
         } catch (IOException e) {

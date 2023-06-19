@@ -10,7 +10,6 @@ class Memoria {
     }
 
     public void alocaMemoria(Executavel comando) {
-        
     }
     public void liberaMemoria(Executavel comando) {
     }
