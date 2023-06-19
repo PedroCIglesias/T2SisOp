@@ -7,13 +7,9 @@ import java.util.ArrayList;
 
 
 public class Compilador {
-    private ArrayList<Executavel> codigoExecutavel;
 
-    public Compilador() {
-        codigoExecutavel = new ArrayList<>();
-    }
-
-    public void lerArquivo(String nomeArquivo) {
+    public ArrayList<Executavel> lerArquivo(String nomeArquivo) {
+        ArrayList<Executavel> codigoExecutavel = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(nomeArquivo))) {
             String linha;
             while ((linha = reader.readLine()) != null) {
@@ -32,5 +28,6 @@ public class Compilador {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return codigoExecutavel;
     }
 }

@@ -9,7 +9,9 @@ class Memoria {
         this.particao = particao;
     }
 
-    public void alocarMemoria(Map<String, Integer> alocacoes) {
+    public void alocaMemoria(Executavel comando) {
         
+    }
+    public void liberaMemoria(Executavel comando) {
     }
 }

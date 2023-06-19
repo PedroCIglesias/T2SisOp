@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Memoria memoria = new Memoria(0,new ParticaoDefinida());
+        SistemaOperacional sisOp;
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Selecione o tipo de alocação:");
@@ -31,16 +33,20 @@ public class Main {
                 return;
             }
 
+            memoria = new Memoria(tamanhoMemoria,new ParticaoVariavel(politica));
+
             
 
         } else if (opcao == 2) {
             System.out.print("Informe o tamanho da memória: ");
             int tamanhoMemoria = scanner.nextInt();
-
+            memoria = new Memoria(tamanhoMemoria, new ParticaoDefinida());
 
         } else {
             System.out.println("Opção inválida.");
         }
+
+        sisOp = new SistemaOperacional(memoria);
         scanner.close();
     }
 }
