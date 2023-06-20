@@ -12,7 +12,6 @@ public class Executavel {
     }
 
     public Tipo getTipo(){return tipo;}
-    public String getId(){return processo.id;}
-    public int getTamanho(){return processo.tamanho;}
+    public Processo getProcesso(){return processo;}
 
 }

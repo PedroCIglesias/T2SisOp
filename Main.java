@@ -47,6 +47,11 @@ public class Main {
         }
 
         sisOp = new SistemaOperacional(memoria);
+        try {
+            sisOp.executar();
+        } catch (ErroDeMemoria e) {
+            e.printStackTrace();
+        }
         scanner.close();
     }
 }

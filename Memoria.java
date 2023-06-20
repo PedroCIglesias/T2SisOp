@@ -9,7 +9,7 @@ class Memoria {
         this.buddySystem = new BuddySystem(tamanhoMemoria);
     }
 
-    public void alocaMemoria(Processo processo) {
+    public void alocaMemoria(Processo processo) throws ErroDeMemoria {
         if (particao instanceof ParticaoDefinida) {
 
         } else {
@@ -17,7 +17,7 @@ class Memoria {
         }
     }
 
-    public void liberaMemoria(Processo processo) {
+    public void liberaMemoria(Processo processo) throws ErroDeMemoria {
         if (particao instanceof ParticaoDefinida) {
 
         } else {

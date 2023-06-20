@@ -5,17 +5,17 @@ public class BuddySystem {
         raiz = new Buddy(tamanho);
     }
 
-    public void alocar(Processo processo) {
+    public void alocar(Processo processo)  throws ErroDeMemoria{
         if (alocarRecursao(raiz, processo) == false) {
-            // lanca erro
+            throw new ErroDeMemoria("erro");
         } else {
             imprimeBuddySystem();
         }
     }
 
-    public void desalocar(Processo processo) {
+    public void desalocar(Processo processo)  throws ErroDeMemoria{
         if (desalocarRecursao(raiz, processo) == false) {
-            // lanca erro
+            throw new ErroDeMemoria("erro");
         } else {
             fechaBloco(raiz);
             imprimeBuddySystem();

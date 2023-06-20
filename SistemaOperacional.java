@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class SistemaOperacional {
     private Memoria memoria;
     private Compilador compilador;
@@ -8,7 +10,13 @@ class SistemaOperacional {
     }
 
     public void executar() {
-        //Map<String, Integer> alocacoes = compilador.lerArquivo();
-        //memoria.alocarMemoria(alocacoes);
+        ArrayList<Executavel> codigoExecutavel = compilador.lerArquivo("codigo.txt");
+        for (Executavel executavel : codigoExecutavel){
+            if(executavel.getTipo()==Executavel.Tipo.IN){
+                memoria.alocaMemoria(executavel.getProcesso());
+            }else{
+                memoria.liberaMemoria(executavel.getProcesso());
+            }
+        }
     }
 }
