@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
-import Memoria.Memoria;
-import Memoria.ParticaoDefinida;
-import Memoria.ParticaoVariavel;
-import Memoria.PoliticaAlocacao;
-import SisOp.SistemaOperacional;
+import memoria.Memoria;
+import memoria.ParticaoDefinida;
+import memoria.ParticaoVariavel;
+import memoria.PoliticaAlocacao;
+import sisOp.SistemaOperacional;
 
 public class Main {
     public static void main(String[] args) {
-        Memoria memoria = new Memoria(0,new ParticaoDefinida());
+        Memoria memoria = null;
         SistemaOperacional sisOp;
         Scanner scanner = new Scanner(System.in);
 

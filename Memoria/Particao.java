@@ -1,3 +1,3 @@
-package Memoria;
+package memoria;
 public interface Particao {
 }

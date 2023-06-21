@@ -1,4 +1,4 @@
-package Memoria;
+package memoria;
 public class ParticaoVariavel implements Particao {
     private PoliticaAlocacao politicaAlocacao;
 

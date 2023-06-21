@@ -1,8 +1,9 @@
-package SisOp;
+package sisOp;
 
 
 import java.util.ArrayList;
-import Memoria.Memoria;
+
+import memoria.Memoria;
 
 public class SistemaOperacional {
     private Memoria memoria;

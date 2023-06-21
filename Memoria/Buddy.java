@@ -1,6 +1,6 @@
-package Memoria;
+package memoria;
 
-import SisOp.Processo;
+import sisOp.Processo;
 
 class Buddy{
     int tamanho;    

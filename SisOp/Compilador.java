@@ -1,4 +1,4 @@
-package SisOp;
+package sisOp;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -1,4 +1,4 @@
-package SisOp;
+package sisOp;
 
 public class Executavel {
     public enum Tipo {

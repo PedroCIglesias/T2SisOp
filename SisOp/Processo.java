@@ -1,4 +1,4 @@
-package SisOp;
+package sisOp;
 
 public class Processo {
     public String id;
