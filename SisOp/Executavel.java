@@ -1,3 +1,5 @@
+package SisOp;
+
 public class Executavel {
     public enum Tipo {
     IN,

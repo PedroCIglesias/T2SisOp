@@ -1,6 +1,10 @@
-import java.util.ArrayList;
+package SisOp;
 
-class SistemaOperacional {
+
+import java.util.ArrayList;
+import Memoria.Memoria;
+
+public class SistemaOperacional {
     private Memoria memoria;
     private Compilador compilador;
 

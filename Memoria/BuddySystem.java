@@ -1,3 +1,7 @@
+package Memoria;
+
+import SisOp.Processo;
+
 public class BuddySystem {
     private Buddy raiz;
 
@@ -5,17 +9,17 @@ public class BuddySystem {
         raiz = new Buddy(tamanho);
     }
 
-    public void alocar(Processo processo)  throws ErroDeMemoria{
+    public void alocar(Processo processo){
         if (alocarRecursao(raiz, processo) == false) {
-            throw new ErroDeMemoria("erro");
+            //throw new ErroDeMemoria("erro");
         } else {
             imprimeBuddySystem();
         }
     }
 
-    public void desalocar(Processo processo)  throws ErroDeMemoria{
+    public void desalocar(Processo processo){
         if (desalocarRecursao(raiz, processo) == false) {
-            throw new ErroDeMemoria("erro");
+            //throw new ErroDeMemoria("erro");
         } else {
             fechaBloco(raiz);
             imprimeBuddySystem();

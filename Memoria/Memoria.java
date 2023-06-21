@@ -1,4 +1,8 @@
-class Memoria {
+package Memoria;
+
+import SisOp.Processo;
+
+public class Memoria {
     private int tamanhoMemoria;
     private Particao particao;
     private BuddySystem buddySystem;
@@ -9,7 +13,7 @@ class Memoria {
         this.buddySystem = new BuddySystem(tamanhoMemoria);
     }
 
-    public void alocaMemoria(Processo processo) throws ErroDeMemoria {
+    public void alocaMemoria(Processo processo) {
         if (particao instanceof ParticaoDefinida) {
 
         } else {
@@ -17,7 +21,7 @@ class Memoria {
         }
     }
 
-    public void liberaMemoria(Processo processo) throws ErroDeMemoria {
+    public void liberaMemoria(Processo processo) {
         if (particao instanceof ParticaoDefinida) {
 
         } else {

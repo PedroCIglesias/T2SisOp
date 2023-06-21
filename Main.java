@@ -1,25 +1,31 @@
 import java.util.Scanner;
 
+import Memoria.Memoria;
+import Memoria.ParticaoDefinida;
+import Memoria.ParticaoVariavel;
+import Memoria.PoliticaAlocacao;
+import SisOp.SistemaOperacional;
+
 public class Main {
     public static void main(String[] args) {
         Memoria memoria = new Memoria(0,new ParticaoDefinida());
         SistemaOperacional sisOp;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Selecione o tipo de alocação:");
-        System.out.println("1. Partições Variáveis");
-        System.out.println("2. Partições Dinâmicas");
-        System.out.print("Opção: ");
+        System.out.println("Selecione o tipo de alocacao:");
+        System.out.println("1. Particoes Variaveis");
+        System.out.println("2. Particoes Definidas");
+        System.out.print("Opcao: ");
         int opcao = scanner.nextInt();
 
         if (opcao == 1) {
-            System.out.print("Informe o tamanho da memória: ");
+            System.out.print("Informe o tamanho da memoria: ");
             int tamanhoMemoria = scanner.nextInt();
 
-            System.out.println("Selecione a política de alocação:");
+            System.out.println("Selecione a politica de alocacao:");
             System.out.println("1. Worst-Fit");
             System.out.println("2. Circular-Fit");
-            System.out.print("Opção: ");
+            System.out.print("Opcao: ");
             int opcaoPolitica = scanner.nextInt();
 
             PoliticaAlocacao politica;
@@ -29,7 +35,7 @@ public class Main {
             } else if (opcaoPolitica == 2) {
                 politica = PoliticaAlocacao.CIRCULAR_FIT;
             } else {
-                System.out.println("Opção inválida de política de alocação.");
+                System.out.println("Opcao inválida de politica de alocacao.");
                 return;
             }
 
@@ -38,20 +44,16 @@ public class Main {
             
 
         } else if (opcao == 2) {
-            System.out.print("Informe o tamanho da memória: ");
+            System.out.print("Informe o tamanho da memoria: ");
             int tamanhoMemoria = scanner.nextInt();
             memoria = new Memoria(tamanhoMemoria, new ParticaoDefinida());
 
         } else {
-            System.out.println("Opção inválida.");
+            System.out.println("Opcao invalida.");
         }
 
         sisOp = new SistemaOperacional(memoria);
-        try {
-            sisOp.executar();
-        } catch (ErroDeMemoria e) {
-            e.printStackTrace();
-        }
+        sisOp.executar();
         scanner.close();
     }
 }
