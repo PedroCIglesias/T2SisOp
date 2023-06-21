@@ -43,7 +43,7 @@ public class BuddySystem {
                 }
             }
         }
-        return false;
+        return true;
     }
 
     private boolean desalocarRecursao(Buddy buddy, Processo processo) {
@@ -88,7 +88,7 @@ public class BuddySystem {
     private void imprimirBuddySystemRecursivo(Buddy buddy, int nivel) {
         if (buddy != null) {
             imprimirBuddySystemRecursivo(buddy.direita, nivel + 1);
-            if (buddy.processo == null)
+            if (buddy.processo != null)
                 System.out.println(obterEspacamento(nivel) + "|" + buddy.tamanho + "|" + "(" + buddy.processo.id + ", "
                         + buddy.processo.tamanho + ")");
             else

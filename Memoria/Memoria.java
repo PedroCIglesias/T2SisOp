@@ -15,17 +15,15 @@ public class Memoria {
 
     public void alocaMemoria(Processo processo) {
         if (particao instanceof ParticaoDefinida) {
-
-        } else {
             buddySystem.alocar(processo);
+        } else {
         }
     }
 
     public void liberaMemoria(Processo processo) {
         if (particao instanceof ParticaoDefinida) {
-
-        } else {
             buddySystem.desalocar(processo);
+        } else {
         }
     }
 }

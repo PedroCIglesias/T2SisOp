@@ -5,29 +5,32 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
+
 public class Compilador {
 
     public ArrayList<Executavel> lerArquivo(String nomeArquivo) {
         ArrayList<Executavel> codigoExecutavel = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(nomeArquivo))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(nomeArquivo))) {
             String linha;
-            while ((linha = reader.readLine()) != null) {
-                String[] partes = linha.split(" ");
-                String comando = partes[0];
+            while ((linha = br.readLine()) != null) {
                 Processo processo = new Processo();
-
-                if (comando.equals("IN")) {
-                    processo.id = partes[1].substring(1, partes[1].length() - 1);
-                    processo.tamanho = Integer.parseInt(partes[2]);
-                    codigoExecutavel.add(new Executavel(Executavel.Tipo.IN,processo));
-                } else if (comando.equals("OUT")) {
-                    processo.id = partes[1].substring(1, partes[1].length() - 1);
-                    codigoExecutavel.add(new Executavel(Executavel.Tipo.OUT,processo));
+                linha = linha.trim();
+                if (linha.startsWith("IN")) {
+                    String[] partes = linha.split("[(),]");
+                    processo.id = partes[1].trim();
+                    processo.tamanho = Integer.parseInt(partes[2].trim());
+                    codigoExecutavel.add(new Executavel(Executavel.Tipo.IN, processo));
+                } else if (linha.startsWith("OUT")) {
+                    String[] partes = linha.split("[(),]");
+                    processo.id = partes[1].trim();
+                    codigoExecutavel.add(new Executavel(Executavel.Tipo.OUT, processo));
                 }
             }
+            return codigoExecutavel;
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
-        return codigoExecutavel;
+        return null;
     }
 }
