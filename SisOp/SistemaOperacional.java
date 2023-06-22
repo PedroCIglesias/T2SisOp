@@ -1,6 +1,5 @@
 package sisOp;
 
-
 import java.util.ArrayList;
 
 import memoria.Memoria;
@@ -16,10 +15,12 @@ public class SistemaOperacional {
 
     public void executar() {
         ArrayList<Executavel> codigoExecutavel = compilador.lerArquivo("codigo.txt");
-        for (Executavel executavel : codigoExecutavel){
-            if(executavel.getTipo()==Executavel.Tipo.IN){
+        for (Executavel executavel : codigoExecutavel) {
+            System.out.println(
+                    executavel.getTipo() + "(" + executavel.processo.id + ", " + executavel.processo.tamanho + ")");
+            if (executavel.getTipo() == Executavel.Tipo.IN) {
                 memoria.alocaMemoria(executavel.getProcesso());
-            }else{
+            } else {
                 memoria.liberaMemoria(executavel.getProcesso());
             }
         }
